@@ -19,7 +19,7 @@ api = "0.7"
   homepage = "https://github.com/paketo-buildpacks/elastic-apm"
   id = "paketo-buildpacks/elastic-apm"
   keywords = ["elastic-apm", "agent", "apm", "java", "node.js"]
-  name = "Paketo Elastic APM Buildpack"
+  name = "Paketo Buildpack for Elastic APM"
   sbom-formats = ["application/vnd.syft+json", "application/vnd.cyclonedx+json"]
   version = "{{.version}}"
 
