@@ -51,6 +51,7 @@ func (d Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error
 				Requires: []libcnb.BuildPlanRequire{
 					{Name: "elastic-apm-nodejs"},
 					{Name: "node", Metadata: map[string]interface{}{"build": true}},
+					{Name: "node_modules"},
 				},
 			},
 		},
