@@ -26,8 +26,9 @@ import (
 )
 
 func main() {
+	logger := bard.NewLogger(os.Stdout)
 	libpak.Main(
-		elastic.Detect{},
-		elastic.Build{Logger: bard.NewLogger(os.Stdout)},
+		elastic.Detect{Logger: logger},
+		elastic.Build{Logger: logger},
 	)
 }
