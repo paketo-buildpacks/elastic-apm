@@ -46,14 +46,14 @@ api = "0.7"
       uri = "https://github.com/elastic/apm-agent-java/blob/master/LICENSE.txt"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:elastic-apm:nodejs-agent:3.46.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:elastic-apm:nodejs-agent:3.47.0:*:*:*:*:*:*:*"]
     id = "elastic-apm-nodejs"
     name = "Elastic APM NodeJS Agent"
-    purl = "pkg:generic/elastic-apm-nodejs-agent@3.46.0?arch=amd64"
-    sha256 = "ed8dd717e8c134221875097b0e54759deb3e7d60b11583696c738be324e9416b"
+    purl = "pkg:generic/elastic-apm-nodejs-agent@3.47.0?arch=amd64"
+    sha256 = "c4ed1e95fe88e55342d722f5c241a5777cf61b697032e62668e27d3e8aa28149"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://registry.npmjs.org/elastic-apm-node/-/elastic-apm-node-3.46.0.tgz"
-    version = "3.46.0"
+    uri = "https://registry.npmjs.org/elastic-apm-node/-/elastic-apm-node-3.47.0.tgz"
+    version = "3.47.0"
 
     [[metadata.dependencies.licenses]]
       type = "Apache-2.0"
