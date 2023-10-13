@@ -26,6 +26,7 @@ dependencies:
     uri:         https://repo1.maven.org/maven2
     group_id:    co.elastic.apm
     artifact_id: elastic-apm-agent
+    source_classifier: sources
 - id:   elastic-apm-nodejs
   uses: docker://ghcr.io/paketo-buildpacks/actions/npm-dependency:main
   with:
