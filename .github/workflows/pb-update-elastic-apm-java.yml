@@ -46,6 +46,7 @@ jobs:
               with:
                 artifact_id: elastic-apm-agent
                 group_id: co.elastic.apm
+                source_classifier: sources
                 uri: https://repo1.maven.org/maven2
             - name: Update Buildpack Dependency
               id: buildpack
