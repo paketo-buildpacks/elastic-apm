@@ -48,16 +48,16 @@ api = "0.7"
       uri = "https://github.com/elastic/apm-agent-java/blob/master/LICENSE.txt"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:elastic-apm:nodejs-agent:4.4.1:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:elastic-apm:nodejs-agent:4.5.0:*:*:*:*:*:*:*"]
     id = "elastic-apm-nodejs"
     name = "Elastic APM NodeJS Agent"
-    purl = "pkg:generic/elastic-apm-nodejs-agent@4.4.1?arch=amd64"
-    sha256 = "54268f94c7695a47b40c4e6af7347a5733f3d47767115c10ca0a37776433c2d3"
-    source = "https://registry.npmjs.org/elastic-apm-node/-/elastic-apm-node-4.4.1.tgz"
-    source-sha256 = "54268f94c7695a47b40c4e6af7347a5733f3d47767115c10ca0a37776433c2d3"
+    purl = "pkg:generic/elastic-apm-nodejs-agent@4.5.0?arch=amd64"
+    sha256 = "ee6a3120c9a20fbad19bf22ff453e1868829d0ca3a5b14d65b6b9d1ece62b568"
+    source = "https://registry.npmjs.org/elastic-apm-node/-/elastic-apm-node-4.5.0.tgz"
+    source-sha256 = "ee6a3120c9a20fbad19bf22ff453e1868829d0ca3a5b14d65b6b9d1ece62b568"
     stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
-    uri = "https://registry.npmjs.org/elastic-apm-node/-/elastic-apm-node-4.4.1.tgz"
-    version = "4.4.1"
+    uri = "https://registry.npmjs.org/elastic-apm-node/-/elastic-apm-node-4.5.0.tgz"
+    version = "4.5.0"
 
     [[metadata.dependencies.licenses]]
       type = "Apache-2.0"
