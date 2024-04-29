@@ -34,6 +34,62 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		ctx libcnb.BuildContext
 	)
 
+	it("contributes .Net agent API <= 0.6", func() {
+		ctx.Plan.Entries = append(ctx.Plan.Entries, libcnb.BuildpackPlanEntry{Name: "elastic-apm-dotnet"})
+		ctx.Buildpack.Metadata = map[string]interface{}{
+			"dependencies": []map[string]interface{}{
+				{
+					"id":      "elastic-apm-dotnet",
+					"version": "1.1.1",
+					"stacks":  []interface{}{"test-stack-id"},
+				},
+			},
+		}
+		ctx.Buildpack.API = "0.6"
+		ctx.StackID = "test-stack-id"
+
+		result, err := elastic.Build{}.Build(ctx)
+		Expect(err).NotTo(HaveOccurred())
+
+		Expect(result.Layers).To(HaveLen(2))
+		Expect(result.Layers[0].Name()).To(Equal("elastic-apm-dotnet"))
+		Expect(result.Layers[1].Name()).To(Equal("helper"))
+		Expect(result.Layers[1].(libpak.HelperLayerContributor).Names).To(Equal([]string{"properties"}))
+
+		Expect(result.BOM.Entries).To(HaveLen(2))
+		Expect(result.BOM.Entries[0].Name).To(Equal("elastic-apm-dotnet"))
+		Expect(result.BOM.Entries[1].Name).To(Equal("helper"))
+	})
+
+	it("contributes .Net agent API >= 0.7", func() {
+		ctx.Plan.Entries = append(ctx.Plan.Entries, libcnb.BuildpackPlanEntry{Name: "elastic-apm-dotnet"})
+		ctx.Buildpack.Metadata = map[string]interface{}{
+			"dependencies": []map[string]interface{}{
+				{
+					"id":      "elastic-apm-dotnet",
+					"version": "1.1.1",
+					"stacks":  []interface{}{"test-stack-id"},
+					"cpes":    []interface{}{"cpe:2.3:a:elastic-apm:dotnet:1.1.1:*:*:*:*:*:*:*"},
+					"purl":    "pkg:generic/elastic-apm-dotnet@1.1.1?arch=amd64",
+				},
+			},
+		}
+		ctx.Buildpack.API = "0.7"
+		ctx.StackID = "test-stack-id"
+
+		result, err := elastic.Build{}.Build(ctx)
+		Expect(err).NotTo(HaveOccurred())
+
+		Expect(result.Layers).To(HaveLen(2))
+		Expect(result.Layers[0].Name()).To(Equal("elastic-apm-dotnet"))
+		Expect(result.Layers[1].Name()).To(Equal("helper"))
+		Expect(result.Layers[1].(libpak.HelperLayerContributor).Names).To(Equal([]string{"properties"}))
+
+		Expect(result.BOM.Entries).To(HaveLen(2))
+		Expect(result.BOM.Entries[0].Name).To(Equal("elastic-apm-dotnet"))
+		Expect(result.BOM.Entries[1].Name).To(Equal("helper"))
+	})
+
 	it("contributes Java agent API <= 0.6", func() {
 		ctx.Plan.Entries = append(ctx.Plan.Entries, libcnb.BuildpackPlanEntry{Name: "elastic-apm-java"})
 		ctx.Buildpack.Metadata = map[string]interface{}{

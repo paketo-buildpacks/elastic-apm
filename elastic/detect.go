@@ -20,11 +20,11 @@ import (
 	"fmt"
 
 	"github.com/buildpacks/libcnb"
-	"github.com/paketo-buildpacks/libpak/bindings"
 	"github.com/paketo-buildpacks/libpak/bard"
+	"github.com/paketo-buildpacks/libpak/bindings"
 )
 
-type Detect struct{
+type Detect struct {
 	Logger bard.Logger
 }
 
@@ -39,6 +39,15 @@ func (d Detect) Detect(context libcnb.DetectContext) (libcnb.DetectResult, error
 	return libcnb.DetectResult{
 		Pass: true,
 		Plans: []libcnb.BuildPlan{
+			{
+				Provides: []libcnb.BuildPlanProvide{
+					{Name: "elastic-apm-dotnet"},
+				},
+				Requires: []libcnb.BuildPlanRequire{
+					{Name: "elastic-apm-dotnet"},
+					{Name: "dotnet-core-aspnet-runtime"},
+				},
+			},
 			{
 				Provides: []libcnb.BuildPlanProvide{
 					{Name: "elastic-apm-java"},

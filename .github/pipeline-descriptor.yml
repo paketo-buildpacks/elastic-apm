@@ -31,3 +31,10 @@ dependencies:
   uses: docker://ghcr.io/paketo-buildpacks/actions/npm-dependency:main
   with:
     package: elastic-apm-node
+- id:   elastic-apm-dotnet
+  uses: docker://ghcr.io/paketo-buildpacks/actions/github-release-dependency:main
+  with:
+    glob: ElasticApmAgent_.+.zip
+    owner: elastic
+    repository: apm-agent-dotnet
+    token: ${{ secrets.PAKETO_BOT_GITHUB_TOKEN }}

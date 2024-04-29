@@ -19,6 +19,11 @@ The buildpack will do the following for NodeJS applications:
 * If main module does not already require `elastic-apm-node` module, prepends the main module with `require('elastic-apm-node').start();`
 * Transforms the contents of the binding secret to environment variables with the pattern `ELASTIC_APM_<KEY>=<VALUE>`
 
+The buildpack will do the following for .Net application:
+
+* Contributes a .Net agent to a layer and configures `DOTNET_STARTUP_HOOKS` that points to `ElasticApmAgentStartupHook.dll`
+* Transforms the contents of the binding secret to environment variables with the pattern `ELASTIC_APM_<KEY>=<VALUE>`
+
 ## Bindings
 The buildpack optionally accepts the following bindings:
 

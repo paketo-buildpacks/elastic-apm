@@ -45,6 +45,20 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 	}
 	dc.Logger = b.Logger
 
+	if _, ok, err := pr.Resolve("elastic-apm-dotnet"); err != nil {
+		return libcnb.BuildResult{}, fmt.Errorf("unable to resolve elastic-apm-dotnet plan entry\n%w", err)
+	} else if ok {
+		dep, err := dr.Resolve("elastic-apm-dotnet", "")
+		if err != nil {
+			return libcnb.BuildResult{}, fmt.Errorf("unable to find dependency\n%w", err)
+		}
+
+		dna, be := NewDotNetAgent(dep, dc)
+		dna.Logger = b.Logger
+		result.Layers = append(result.Layers, dna)
+		result.BOM.Entries = append(result.BOM.Entries, be)
+	}
+
 	if _, ok, err := pr.Resolve("elastic-apm-java"); err != nil {
 		return libcnb.BuildResult{}, fmt.Errorf("unable to resolve elastic-apm-java plan entry\n%w", err)
 	} else if ok {
