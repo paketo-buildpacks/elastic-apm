@@ -1,4 +1,4 @@
-# Copyright 2018-2022 the original author or authors.
+# Copyright 2018-2024 the original author or authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,18 +28,18 @@ api = "0.7"
     uri = "https://github.com/paketo-buildpacks/elastic-apm/blob/main/LICENSE"
 
 [metadata]
-  include-files = ["LICENSE", "NOTICE", "README.md", "bin/build", "bin/detect", "bin/helper", "bin/main", "buildpack.toml"]
+  include-files = ["LICENSE", "NOTICE", "README.md", "linux/amd64/bin/build", "linux/amd64/bin/detect", "linux/amd64/bin/main", "linux/amd64/bin/helper", "linux/arm64/bin/build", "linux/arm64/bin/detect", "linux/arm64/bin/main", "linux/arm64/bin/helper", "buildpack.toml"]
   pre-package = "scripts/build.sh"
 
   [[metadata.dependencies]]
     cpes = ["cpe:2.3:a:elastic-apm:java-agent:1.49.0:*:*:*:*:*:*:*"]
     id = "elastic-apm-java"
     name = "Elastic APM Java Agent"
-    purl = "pkg:generic/elastic-apm-java-agent@1.49.0?arch=amd64"
+    purl = "pkg:generic/elastic-apm-java-agent@1.49.0"
     sha256 = "36a020f2584f3c5aabfda3f29e479380a0409bad8bbf0a39f444bf5c5836aaaf"
     source = "https://repo1.maven.org/maven2/co/elastic/apm/elastic-apm-agent/1.49.0/elastic-apm-agent-1.49.0-sources.jar"
     source-sha256 = "e49849243c593f9f3dbd28774a9d2cbdae6443cb97e44b0113075628516afbe0"
-    stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
+    stacks = ["*"]
     uri = "https://repo1.maven.org/maven2/co/elastic/apm/elastic-apm-agent/1.49.0/elastic-apm-agent-1.49.0.jar"
     version = "1.49.0"
 
@@ -55,7 +55,7 @@ api = "0.7"
     sha256 = "a2f84f82b41e5f486d5a6810caf257b7a53bcdf1d5b748989ec39e6e21685d3d"
     source = "https://registry.npmjs.org/elastic-apm-node/-/elastic-apm-node-4.5.3.tgz"
     source-sha256 = "a2f84f82b41e5f486d5a6810caf257b7a53bcdf1d5b748989ec39e6e21685d3d"
-    stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
+    stacks = ["*"]
     uri = "https://registry.npmjs.org/elastic-apm-node/-/elastic-apm-node-4.5.3.tgz"
     version = "4.5.3"
 
@@ -64,10 +64,12 @@ api = "0.7"
       uri = "https://github.com/elastic/apm-agent-nodejs/blob/master/LICENSE"
 
 [[stacks]]
-  id = "io.buildpacks.stacks.bionic"
-
-[[stacks]]
-  id = "io.paketo.stacks.tiny"
-
-[[stacks]]
   id = "*"
+
+[[targets]]
+  arch = "amd64"
+  os = "linux"
+
+[[targets]]
+  arch = "arm64"
+  os = "linux"
