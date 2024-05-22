@@ -48,6 +48,15 @@ func testDetect(t *testing.T, context spec.G, it spec.S) {
 			Plans: []libcnb.BuildPlan{
 				{
 					Provides: []libcnb.BuildPlanProvide{
+						{Name: "elastic-apm-dotnet"},
+					},
+					Requires: []libcnb.BuildPlanRequire{
+						{Name: "elastic-apm-dotnet"},
+						{Name: "dotnet-core-aspnet-runtim"},
+					},
+				},
+				{
+					Provides: []libcnb.BuildPlanProvide{
 						{Name: "elastic-apm-java"},
 					},
 					Requires: []libcnb.BuildPlanRequire{

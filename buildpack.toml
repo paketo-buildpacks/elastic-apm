@@ -32,6 +32,22 @@ api = "0.7"
   pre-package = "scripts/build.sh"
 
   [[metadata.dependencies]]
+    cpes = ["cpe:2.3:a:elastic-apm:dotnet-agent:1.26.0:*:*:*:*:*:*:*"]
+    id = "elastic-apm-dotnet"
+    name = "Elastic APM .Net Agent"
+    purl = "pkg:generic/elastic-apm-dotnet-agent@1.26.0?arch=amd64"
+    sha256 = "c5dae4f0dfbb0a6059d69f696efefa007abc3dd1e2683ea59a03553b6c20ed21"
+    source = "https://github.com/elastic/apm-agent-dotnet/archive/refs/tags/v1.26.0.zip"
+    source-sha256 = "c1321f5a4540c4730a1d2dd8b53d98148815f69e4de8650a45f2c52966ea4056"
+    stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
+    uri = "https://github.com/elastic/apm-agent-dotnet/releases/download/v1.26.0/ElasticApmAgent_1.26.0.zip"
+    version = "1.26.0"
+
+    [[metadata.dependencies.licenses]]
+      type = "Apache-2.0"
+      uri = "https://github.com/elastic/apm-agent-dotnet/blob/main/LICENSE"
+
+  [[metadata.dependencies]]
     cpes = ["cpe:2.3:a:elastic-apm:java-agent:1.49.0:*:*:*:*:*:*:*"]
     id = "elastic-apm-java"
     name = "Elastic APM Java Agent"
