@@ -1,4 +1,7 @@
-# `paketobuildpacks/elastic-apm`
+# Paketo Buildpack for Elastic APM
+
+## Buildpack ID: `paketo-buildpacks/elastic-apm`
+## Registry URLs: `docker.io/paketobuildpacks/elastic-apm`
 The Paketo Buildpack for Elastic APM is a Cloud Native Buildpack that contributes the [Elastic APM][e] Agent and configures it to connect to the service.
 
 [e]: https://www.elastic.co/solutions/apm
