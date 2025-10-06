@@ -55,16 +55,6 @@ func testDetect(t *testing.T, context spec.G, it spec.S) {
 						{Name: "jvm-application"},
 					},
 				},
-				{
-					Provides: []libcnb.BuildPlanProvide{
-						{Name: "elastic-apm-nodejs"},
-					},
-					Requires: []libcnb.BuildPlanRequire{
-						{Name: "elastic-apm-nodejs"},
-						{Name: "node", Metadata: map[string]interface{}{"build": true}},
-						{Name: "node_modules"},
-					},
-				},
 			},
 		}))
 	})
