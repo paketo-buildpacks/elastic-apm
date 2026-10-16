@@ -32,16 +32,16 @@ api = "0.7"
   pre-package = "scripts/build.sh"
 
   [[metadata.dependencies]]
-    cpes = ["cpe:2.3:a:elastic-apm:java-agent:1.57.0:*:*:*:*:*:*:*"]
+    cpes = ["cpe:2.3:a:elastic-apm:java-agent:1.57.1:*:*:*:*:*:*:*"]
     id = "elastic-apm-java"
     name = "Elastic APM Java Agent"
-    purl = "pkg:generic/elastic-apm-java-agent@1.57.0"
-    sha256 = "c8a9f4c3b2161df152bfe9adff8138c0e4a3fcc64db2c858fef672ef8efd1f89"
-    source = "https://repo1.maven.org/maven2/co/elastic/apm/elastic-apm-agent/1.57.0/elastic-apm-agent-1.57.0-sources.jar"
-    source-sha256 = "eebc75b022df76fe1e7d5628c81ee3e1bc15f0972d19491e4dc24869f5b73a8a"
+    purl = "pkg:generic/elastic-apm-java-agent@1.57.1"
+    sha256 = "5f8a297e015fc4e225a35f6f65f4ec46d716bbabb0b33c780e9173db621deb93"
+    source = "https://repo1.maven.org/maven2/co/elastic/apm/elastic-apm-agent/1.57.1/elastic-apm-agent-1.57.1-sources.jar"
+    source-sha256 = "c7d41e54fb603aea5558bf6bf0bbf3bb32f184e6d4aa8767abcf7510c312865c"
     stacks = ["*"]
-    uri = "https://repo1.maven.org/maven2/co/elastic/apm/elastic-apm-agent/1.57.0/elastic-apm-agent-1.57.0.jar"
-    version = "1.57.0"
+    uri = "https://repo1.maven.org/maven2/co/elastic/apm/elastic-apm-agent/1.57.1/elastic-apm-agent-1.57.1.jar"
+    version = "1.57.1"
 
     [[metadata.dependencies.licenses]]
       type = "Apache-2.0"
